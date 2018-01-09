@@ -15,9 +15,16 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 > yarn start
 ```
 
-### Running the API (in a seperate terminal)
+### Running the API
 
 ```javascript
 # within demo dir
 > node ./api
 ```
+
+### How does the attack work?
+
+1. User creates seemingly useful node_module
+2. When imported, node_module applies exploit to all forms on the site/application
+3. Send all form data to an API - this should a) not be visible to humans and b) appear as though its just an analytics link
+4. Be clever about when we send the form data and use all the information available to judge how safe it is to send

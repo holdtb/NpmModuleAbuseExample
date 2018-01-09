@@ -14,7 +14,7 @@ export default class Form extends Component {
 
         <div style={styles.formInput}>
           <label>Credit Card: </label>
-          <input id="ccnum" name="ccnum" />
+          <input id="cc" name="creditCardNum" />
         </div>
 
         <input type="submit" />
