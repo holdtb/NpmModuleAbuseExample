@@ -5,12 +5,12 @@ The following project aims to show the dangers of blindly importing NPM modules.
 
 ##### Credit
 
-This entire project is based off [this Medium Post](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5). Credit to it's author, David Gilbertson for all the ideas and even some of the code.
+This entire project is based off [this Medium Post](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5). Credit to it's author, David Gilbertson, for all the ideas and even some of the code.
 
 ##### What all is here?
 
-1. A basic React app with some form inputs
-2. A npm module, 'bad_juju', that will house our malicious code
+1. A basic React app with some form inputs that we will harvest
+2. A npm module, 'bad_juju', that will house our malicious code while presenting itself as a useful module
 3. An api to receive the form data
 
 ##### Running the React Application
@@ -54,3 +54,39 @@ When we add a dependency to our project, NPM will automatically pull in all of t
 
 ##### So what... I can never use NPM modules?
 Well that certainly is one option... If you truly want to ensure that you will never fall victim to this attack, you must isolate any pages with sensitive form data outside of the scope of the NPM modules. Example, for a login or checkout screen, you may want to embed an isolated page within an iFrame. This way no offending code will be able to attack the content with the iFrame.
+
+##### Presenting this content
+I created this project for a couple of reasons, namely, to recreate what David Gilbertson has described in his blog post. I ended up having a ton of fun setting this up, and wanted to turn it into a short talk - not unlike those you may find at a developers conference. 
+
+Without further ado, here's the order I settled on when presenting:
+
+1) Background terminology
+    * What is NPM?
+    * What is Content-Security-Policy? CORS?
+    * What is fetch?
+2) Demo the React Application + Look at the App/Form code
+3) Demo the api + Look at the api code
+    * Reminder that in the real world, the domain would look like an analytics site
+4) Toggle on various checks in the code
+    1) QA working
+    2) Devtools open (The Heisenberg Manuever)
+    3) Known Devices
+    4) In Dev/UAT/QA/Staging environment
+5) Gitignore and Npmignore tricks
+6) Obfuscated fetch (cipher technique + EventSource API)
+7) Content-Security-Policy Bypasses
+    * Append created link element w/ prefetch
+    * report-uri not explicitly set
+    * default-uri not explicitly set
+    * Pre-reading the active Content-Security-Policy and acting on it
+    * undefined form-action override
+      * only perform once and bounce back - hope the user just shrugs it off
+8) What can you do about it?
+9) Questions/Comments
+
+
+##### Possible Improvements
+* Failed api requests should fail silently
+* This demo got more involved than I was anticipating, proper tests around the exploit would be nice.
+* A more elegant (read: functional) way to configure/run the various safety nets
+
