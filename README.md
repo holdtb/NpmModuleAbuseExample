@@ -93,6 +93,7 @@ Without further ado, here's the order I settled on when presenting:
 
 ##### Possible Improvements
 * Failed api requests should fail silently
+* Make the Content-Security-Policy configurable on both ends
 * This demo got more involved than I was anticipating, proper tests around the exploit would be nice.
 * A more elegant (read: functional) way to configure/run the various safety nets
 
