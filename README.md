@@ -75,6 +75,7 @@ Without further ado, here's the order I settled on when presenting:
 4) Toggle on various checks in the code
     1) QA working
     2) Devtools open (The Heisenberg Manuever)
+    3) Randomize attempts
     3) Known Devices
     4) In Dev/UAT/QA/Staging environment
 5) Gitignore and Npmignore tricks
