@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import amazingLogo from './logo.png';
 import './App.css';
 import Form from './Form';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to NPM Exploits</h1>
+    <header className="Alternate-App-header">
+      <img src={amazingLogo} className="Alternate-App-logo" alt="logo" />
     </header>
     <Form />
   </div>
