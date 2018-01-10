@@ -20,6 +20,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 
 ```javascript
 # within demo dir
+> yarn
 > yarn start
 ```
 
@@ -27,6 +28,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 
 ```javascript
 # within demo dir
+> yarn
 > node ./api
 ```
 
