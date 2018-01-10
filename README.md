@@ -58,7 +58,7 @@ document.head.appendChild(linkEl);
 When we add a dependency to our project, NPM will automatically pull in all of this new dependency's dependencies. This means that if one popular package gets infected, it will likely spread to hundreds or thousands of smaller packages. An infected top level package would be bad news for everyone. Remember left_pad?
 
 ##### So what... I can never use NPM modules?
-Well that certainly is one option... If you truly want to ensure that you will never fall victim to this attack, you must isolate any pages with sensitive form data outside of the scope of the NPM modules. Example, for a login or checkout screen, you may want to embed an isolated page within an iFrame. This way no offending code will be able to attack the content with the iFrame.
+Well that certainly is one option... If you truly want to ensure that you will never fall victim to this attack, you must isolate any pages with sensitive form data outside of the scope of the NPM modules. Example, for a login or checkout screen, you may want to embed an isolated page within an iFrame. This way no offending code will be able to attack the content with the iFrame. As a simple solution, one could stick to some good old fashion HTML.
 
 ##### Presenting this content
 I created this project for a couple of reasons, namely, to recreate what David Gilbertson has described in his blog post. I ended up having a ton of fun setting this up, and wanted to turn it into a short talk - not unlike those you may find at a developers conference. 
