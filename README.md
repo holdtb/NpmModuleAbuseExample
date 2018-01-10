@@ -1,7 +1,6 @@
-If you're like me, you have grown to love how productive you can be using NPM. There is a staggering
-number of common problems that have already been solved. As developers, we tend to have a great deal of trust towards NPM and the code that it hosts. How often do we carefully examine the code we are about to important into our projects?
+If you're like me, you have grown to love how productive you can be using NPM. There is a staggering number of common problems that have already been solved. As developers, we tend to have a great deal of trust towards NPM and the code that it hosts. How often do we carefully examine the code we are about to import into our projects?
 
-The following project aims to show the dangers of blindly importing NPM modules. It shows how just because you can see the code on Github does not mean the module you are importing is safe. It also demonstrates how all it takes is one disgruntled employee to start harvesting user's data, silently, and indefinitely. It shows just how hard it is to sniff out such an attack. Finally, it aims to show how our as our javascript project's dependencies grow, our risk of being affected by such an attack increases dramatically.
+The following project aims to show the dangers of blindly importing NPM modules. It shows how just because you can see the code on Github does not mean the module you are importing is safe. It also demonstrates how all it takes is one disgruntled employee to start harvesting user's data, both silently and indefinitely. It shows just how hard it is to sniff out such an attack by utilizing some clever tricks. Finally, it aims to show how our as our javascript project's dependencies grow, our risk of being affected by such an attack increases dramatically.
 
 ##### Credit
 
@@ -10,8 +9,12 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
 ##### What all is here?
 
 1. A basic React app with some form inputs that we will harvest
+    * Created with create-react-app
+    * found in /demo/src
 2. A npm module, 'bad_juju', that will house our malicious code while presenting itself as a useful module
+    * found in /node_modules/bad_juju
 3. An api to receive the form data
+    * Express server
 
 ##### Running the React Application
 
