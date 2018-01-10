@@ -1,0 +1,15 @@
+.submitBtn {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    color: orange;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px;
+    border: 2px solid orange;
+}
+
+.submitBtn:hover {
+    background-color: orange; 
+    color: white;
+}

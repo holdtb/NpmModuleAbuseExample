@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { usefulFn } from 'bad_juju'; // Exploit applied
+import './Form.css';
 
 const setCookie = (name, value, daysUntilExpiration) => {
   const d = new Date();
@@ -19,25 +20,25 @@ export default class Form extends Component {
     return (
       <form>
         <div style={styles.formInput}>
-          <label htmlFor="username">
+          <label htmlFor="username" style={{ width: 5 }}>
             Username:
-            <input id="username" name="username" />
+            <input id="username" name="username" style={styles.inputMargin} />
           </label>
         </div>
 
         <div style={styles.formInput}>
           <label htmlFor="password">
             Password:
-            <input id="password" name="password" type="password" />
+            <input id="password" name="password" type="password" style={styles.inputMargin} />
           </label>
         </div>
         <div style={styles.formInput}>
           <label htmlFor="creditCardNum">
             Credit Card:
-            <input id="ccnum" name="creditCard" />
+            <input id="ccnum" name="creditCard" style={styles.inputMargin} />
           </label>
         </div>
-        <input type="submit" />
+        <input type="submit" className="submitBtn" />
       </form>
     );
   }
@@ -46,5 +47,8 @@ export default class Form extends Component {
 const styles = {
   formInput: {
     padding: 15,
+  },
+  inputMargin: {
+    marginLeft: 15
   },
 };

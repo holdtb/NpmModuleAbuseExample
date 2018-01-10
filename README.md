@@ -17,6 +17,7 @@ This entire project is based off [this Medium Post](https://hackernoon.com/im-ha
     * Express server
 
 ### Running the React Application
+Because I did not want to actually publish the malicious NPM module 'bad_juju', yarn install may not work as expected. I have found that removing it from package.json will typically allow the yarn install command to succeed. However, after restoring the packages, the code within 'node_modules/bad_juju' will often be shown as missing by git. I simply discard those changes and everything carries on as expected. In order to truly fix this problem while maintaining the spirit of an authentic git module, the module itself may need to end up on NPM. Alternatively, the module can live outside of the node_modules folder and instead be copied over as a part of the project setup.
 
 ```javascript
 # within demo dir

@@ -6,6 +6,7 @@
 /node_modules/*
 !/node_modules/bad_juju
 
+
 # testing
 /coverage
 
